@@ -62,11 +62,6 @@ export class ChatView {
   }
 
   _scrollToBottom() {
-    requestAnimationFrame(() => {
-      this.container.scrollTo({
-        top: this.container.scrollHeight,
-        behavior: 'smooth'
-      });
-    });
+    this.container.scrollTop = this.container.scrollHeight;
   }
 }

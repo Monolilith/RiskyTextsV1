@@ -95,7 +95,7 @@ class Game {
 
     const choices = this.engine.getChoices(node);
     if (choices.length > 0) {
-      this.choicePanel.show(choices);
+      setTimeout(() => this.choicePanel.show(choices), 800);
     }
   }
 
