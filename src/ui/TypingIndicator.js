@@ -15,6 +15,7 @@ export class TypingIndicator {
   }
 
   show() {
+    this.container.appendChild(this.el);
     this.el.style.display = 'flex';
     this._scrollIntoView();
   }
