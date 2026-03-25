@@ -1,7 +1,8 @@
 export class ChoicePanel {
-  constructor(container, onChoice) {
+  constructor(container, onChoice, onScrollRequest) {
     this.container = container;
     this.onChoice = onChoice;
+    this.onScrollRequest = onScrollRequest;
     this.headerEl = container.querySelector('.choice-header');
     this.buttonsEl = container.querySelector('.choice-buttons');
   }
@@ -20,7 +21,12 @@ export class ChoicePanel {
       this.buttonsEl.appendChild(btn);
     });
 
+    this.onScrollRequest();
     this.container.classList.add('visible');
+
+    this.container.addEventListener('transitionend', () => {
+      this.onScrollRequest();
+    }, { once: true });
   }
 
   hide() {

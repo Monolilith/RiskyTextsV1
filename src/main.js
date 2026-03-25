@@ -38,9 +38,11 @@ class Game {
     this.typingIndicator = new TypingIndicator(chatArea);
     this.chatView = new ChatView(chatArea, meta);
 
-    this.choicePanel = new ChoicePanel(choicePanelEl, (choice) => {
-      this._onChoice(choice);
-    });
+    this.choicePanel = new ChoicePanel(
+      choicePanelEl,
+      (choice) => this._onChoice(choice),
+      () => this.chatView._scrollToBottom()
+    );
 
     this.endingCard = new EndingCard(endingOverlay, () => {
       this._restart();
