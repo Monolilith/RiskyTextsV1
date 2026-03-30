@@ -19,11 +19,13 @@
         {
           "label": "I definitely miss that chest 😍",
           "responses": ["I definitely miss that chest 😍"],
+          "reaction": "😏",
           "next": "node_flirty_01"
         },
         {
           "label": "Um, who are you?",
           "responses": ["Um, who are you?"],
+          "reaction": "😒",
           "next": "node_confused_01"
         },
         {
@@ -45,6 +47,7 @@
         {
           "label": "Because you're TOXIC 🚩",
           "responses": ["Because you're TOXIC 🚩", "But I guess I have a type..."],
+          "reaction": "😍",
           "next": "node_flirty_02"
         },
         {
@@ -127,6 +130,7 @@
         {
           "label": "Okay that photo is unfair 😳",
           "responses": ["Okay that photo is unfair 😳"],
+          "reaction": "😘",
           "next": "node_mid_tension"
         },
         {
@@ -216,6 +220,7 @@
         {
           "label": "Reported for harassment 🚨",
           "responses": ["Reported for harassment 🚨"],
+          "reaction": "💀",
           "next": "node_cold_path_01"
         }
       ]
@@ -238,6 +243,7 @@
         {
           "label": "Prove it then 💅",
           "responses": ["Prove it then 💅"],
+          "reaction": "😳",
           "next": "node_chaos_path"
         },
         {
@@ -367,11 +373,13 @@
         {
           "label": "LMAOOO you actually did it 💀",
           "responses": ["LMAOOO you actually did it 💀", "This is the best day of my life"],
+          "reaction": "😤",
           "next": "node_chaos_final"
         },
         {
           "label": "Good boy 😈",
           "responses": ["Good boy 😈"],
+          "reaction": "🥵",
           "next": "node_power_path"
         }
       ]
@@ -433,6 +441,7 @@
         {
           "label": "That's more like it 👑",
           "responses": ["That's more like it 👑", "Now we're getting somewhere"],
+          "reaction": "❤️",
           "next": "node_power_final"
         },
         {

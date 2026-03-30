@@ -23,6 +23,16 @@ export class ChatView {
 
     wrapper.appendChild(bubble);
     this.container.appendChild(wrapper);
+    this._lastBubble = bubble;
+  }
+
+  addReaction(emoji) {
+    if (!this._lastBubble) return;
+    const reaction = document.createElement('span');
+    reaction.className = 'bubble-reaction';
+    reaction.textContent = emoji;
+    this._lastBubble.appendChild(reaction);
+    this._scrollToBottom();
   }
 
   _addImageBubble(sender, src) {

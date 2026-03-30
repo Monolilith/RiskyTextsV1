@@ -108,7 +108,15 @@ class Game {
     this.particles.emit();
 
     await this.queue.processPlayerResponses(choice.responses);
-    await this._wait(600);
+
+    if (choice.reaction) {
+      await this._wait(400);
+      this.chatView.addReaction(choice.reaction);
+      this.sound.play('receive');
+      await this._wait(600);
+    } else {
+      await this._wait(600);
+    }
 
     this._playNode(choice.next);
   }
