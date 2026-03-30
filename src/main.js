@@ -6,6 +6,7 @@ import { ChoicePanel } from './ui/ChoicePanel.js';
 import { EndingCard } from './ui/EndingCard.js';
 import { TypingIndicator } from './ui/TypingIndicator.js';
 import { SoundManager } from './audio/SoundManager.js';
+import { ParticleEffect } from './ui/ParticleEffect.js';
 
 class Game {
   constructor() {
@@ -17,6 +18,7 @@ class Game {
     this.choicePanel = null;
     this.endingCard = null;
     this.typingIndicator = null;
+    this.particles = null;
   }
 
   async init() {
@@ -37,6 +39,7 @@ class Game {
 
     this.typingIndicator = new TypingIndicator(chatArea);
     this.chatView = new ChatView(chatArea, meta);
+    this.particles = new ParticleEffect(document.getElementById('particle-layer'));
 
     this.choicePanel = new ChoicePanel(
       choicePanelEl,
@@ -102,6 +105,7 @@ class Game {
   async _onChoice(choice) {
     this.sound.play('tap');
     this.choicePanel.hide();
+    this.particles.emit();
 
     await this.queue.processPlayerResponses(choice.responses);
     await this._wait(600);
