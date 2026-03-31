@@ -538,8 +538,7 @@ html, body {
 
 .splash-image {
   position: relative;
-  width: 115%;
-  max-height: 160px;
+  width: calc(100vw + 100px);
   object-fit: cover;
   object-position: center;
   filter:
@@ -556,8 +555,8 @@ html, body {
 }
 
 @keyframes splashSlide {
-  0%, 10% { transform: translateX(-12px); }
-  90%, 100% { transform: translateX(12px); }
+  0%, 10% { transform: translateX(-10px); }
+  90%, 100% { transform: translateX(10px); }
 }
 
 /* ===== Animations ===== */
