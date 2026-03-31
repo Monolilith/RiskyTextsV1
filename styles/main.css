@@ -21,7 +21,7 @@ html, body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #fdf4f2 0%, #fce8e3 50%, #f5d4cc 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0D3D3 50%, #F0D3D3 100%);
   overflow: hidden;
 }
 
@@ -68,8 +68,8 @@ html, body {
   height: 32px;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(83, 35, 67, 0.5);
+  color: #864e69;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -81,8 +81,8 @@ html, body {
 }
 
 .bgm-toggle:hover {
-  background: rgba(255, 255, 255, 0.22);
-  color: #fff;
+  background: rgba(83, 35, 67);
+  color: #E579AD;
 }
 
 .bgm-icon {
@@ -101,8 +101,9 @@ html, body {
   height: 56px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(100, 160, 255, 0.5);
+  border: 2px solid #E4A025;
   background: #ddd;
+  border-bottom-width: 3px;
 }
 
 .header-name {
@@ -111,7 +112,9 @@ html, body {
   font-weight: 700;
   color: #fff;
   background: linear-gradient(135deg, rgba(200, 60, 100, 0.55), rgba(230, 170, 50, 0.45));
-  border: 1px solid rgba(255, 200, 80, 0.3);
+  border: 3px solid #E4A025;
+  border-top-width: 1px;
+  border-left-width: 2px;
   padding: 4px 14px;
   border-radius: 20px;
   letter-spacing: 0.3px;
@@ -188,12 +191,22 @@ html, body {
   background: rgba(255, 255, 255, 0.85);
   color: #2d2d2d;
   border-bottom-left-radius: 6px;
+  border-top-left-radius: 30px;
+  border-bottom: 4px solid #EF7186;
+  border-top: 0px;
+  border-right: 1px solid #EF7186;
+  border-left: 3px solid #EF7186;
 }
 
 .bubble-player {
-  background: linear-gradient(135deg, #a3527a, #d4882a);
+  background: linear-gradient(135deg, #BF414E, #d4882a);
   color: #fff;
   border-bottom-right-radius: 6px;
+  border-top-right-radius: 30px;
+  border-bottom: 4px solid #612E9E;
+  border-top: 0px;
+  border-right: 3px solid #612E9E;
+  border-left: 1px solid #612E9E;
 }
 
 /* ===== Reactions ===== */
@@ -291,8 +304,6 @@ html, body {
   display: grid;
   grid-template-rows: 0fr;
   background: linear-gradient(180deg, rgba(70, 20, 55, 0.92) 0%, rgba(50, 15, 35, 0.98) 100%);
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
   transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 12px 16px;
@@ -315,7 +326,7 @@ html, body {
 
 .choice-header {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #f5d880;
   margin-bottom: 14px;
@@ -332,7 +343,7 @@ html, body {
   width: 100%;
   padding: 14px 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 50px 100px 50px 100px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -342,6 +353,8 @@ html, body {
   filter: brightness(1);
   transition: background 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
   -webkit-tap-highlight-color: transparent;
+  box-shadow: 3px 5px 0px #612E9E;
+  
 }
 
 .choice-btn:hover:not(:disabled) {
