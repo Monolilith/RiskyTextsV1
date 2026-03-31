@@ -19,13 +19,13 @@
         {
           "label": "I definitely miss that chest 😍",
           "responses": ["I definitely miss that chest 😍"],
-          "reaction": "😏",
+          "splash": "smug",
           "next": "node_flirty_01"
         },
         {
           "label": "Um, who are you?",
           "responses": ["Um, who are you?"],
-          "reaction": "😒",
+          "splash": "annoyed",
           "next": "node_confused_01"
         },
         {
@@ -49,7 +49,6 @@
           "label": "Because you're TOXIC 🚩",
           "responses": ["Because you're TOXIC 🚩", "But I guess I have a type..."],
           "reaction": "😍",
-          "splash": "smug",
           "next": "node_flirty_02"
         },
         {
@@ -356,12 +355,12 @@
       "choices": [
         {
           "label": "Post on your story that I'm the best you ever had",
-          "responses": ["Post on your story that I'm the best you ever had", "Right now. Screenshot it."],
+          "responses": ["Post on your story that I'm the best you ever had", "Right now. I'm watching your feed."],
           "next": "node_chaos_02"
         },
         {
-          "label": "Delete your ex's number. ALL of them.",
-          "responses": ["Delete your ex's number.", "ALL of them.", "While I watch."],
+          "label": "Delete your exes' numbers. ALL of them.",
+          "responses": ["Delete your exes' numbers.", "ALL of them.", "While I watch."],
           "next": "node_chaos_03"
         }
       ]
@@ -372,7 +371,6 @@
         { "sender": "ex", "type": "text", "text": "Are you serious rn? 😳", "delay": 1200 },
         { "sender": "ex", "type": "text", "text": "...", "delay": 2000 },
         { "sender": "ex", "type": "text", "text": "Done.", "delay": 1500 },
-        { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 2000 },
         { "sender": "ex", "type": "text", "text": "Happy? 😤", "delay": 1200 }
       ],
       "choices": [
@@ -402,8 +400,8 @@
       ],
       "choices": [
         {
-          "label": "That's extremely unhinged and I love it",
-          "responses": ["That's extremely unhinged and I love it"],
+          "label": "That's so unhinged, I'm crying 😂",
+          "responses": ["That's so unhinged omg", "I'm actually crying 😂"],
           "next": "node_chaos_final"
         },
         {
@@ -425,7 +423,7 @@
       "choices": [
         {
           "label": "This is the funniest thing that's ever happened to me",
-          "responses": ["This is the funniest thing that's ever happened to me", "I screenshotted everything btw"],
+          "responses": ["This is the funniest thing that's ever happened to me"],
           "next": "ending_chaotic"
         },
         {
