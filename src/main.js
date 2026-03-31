@@ -7,6 +7,7 @@ import { EndingCard } from './ui/EndingCard.js';
 import { TypingIndicator } from './ui/TypingIndicator.js';
 import { SoundManager } from './audio/SoundManager.js';
 import { ParticleEffect } from './ui/ParticleEffect.js';
+import { SplashArt } from './ui/SplashArt.js';
 
 class Game {
   constructor() {
@@ -19,6 +20,7 @@ class Game {
     this.endingCard = null;
     this.typingIndicator = null;
     this.particles = null;
+    this.splashArt = null;
   }
 
   async init() {
@@ -41,6 +43,8 @@ class Game {
     this.chatView = new ChatView(chatArea, meta);
     this.particles = new ParticleEffect(document.getElementById('particle-layer'));
 
+    this.splashArt = new SplashArt(document.getElementById('splash-overlay'));
+
     this.choicePanel = new ChoicePanel(
       choicePanelEl,
       (choice) => this._onChoice(choice),
@@ -59,7 +63,21 @@ class Game {
       onPlaySound: (type) => this.sound.play(type),
     });
 
-    document.addEventListener('click', () => this.sound.init(), { once: true });
+    const bgmBtn = document.getElementById('bgm-toggle');
+    const updateBgmIcon = () => {
+      bgmBtn.classList.toggle('muted', !this.sound.isBgmPlaying());
+    };
+
+    document.addEventListener('click', () => {
+      this.sound.init();
+      updateBgmIcon();
+    }, { once: true });
+
+    bgmBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.sound.toggleBgm();
+      updateBgmIcon();
+    });
 
     this._playNode(this.state.getCurrentNodeId());
   }
@@ -116,6 +134,12 @@ class Game {
       await this._wait(600);
     } else {
       await this._wait(600);
+    }
+
+    if (choice.splash) {
+      this.sound.play(`splash_${choice.splash}`);
+      await this.splashArt.show(choice.splash);
+      await this._wait(300);
     }
 
     this._playNode(choice.next);

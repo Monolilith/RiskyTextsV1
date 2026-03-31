@@ -31,6 +31,7 @@
         {
           "label": "You need to stop texting me.",
           "responses": ["You need to stop texting me."],
+          "splash": "shocked",
           "next": "node_defensive_01"
         }
       ]
@@ -48,6 +49,7 @@
           "label": "Because you're TOXIC 🚩",
           "responses": ["Because you're TOXIC 🚩", "But I guess I have a type..."],
           "reaction": "😍",
+          "splash": "smug",
           "next": "node_flirty_02"
         },
         {
@@ -68,6 +70,7 @@
         {
           "label": "That's literally the problem 💀",
           "responses": ["That's literally the problem 💀"],
+          "splash": "annoyed",
           "next": "node_mid_tension"
         },
         {
@@ -109,6 +112,7 @@
         {
           "label": "What exactly did we have? 🤔",
           "responses": ["What exactly did we have? 🤔"],
+          "splash": "annoyed",
           "next": "node_confused_02"
         },
         {
@@ -221,6 +225,7 @@
           "label": "Reported for harassment 🚨",
           "responses": ["Reported for harassment 🚨"],
           "reaction": "💀",
+          "splash": "shocked",
           "next": "node_cold_path_01"
         }
       ]
@@ -249,6 +254,7 @@
         {
           "label": "Absolutely not. We're done.",
           "responses": ["Absolutely not.", "We're done.", "Bye."],
+          "splash": "angry",
           "next": "node_cold_path_01"
         }
       ]
@@ -374,12 +380,14 @@
           "label": "LMAOOO you actually did it 💀",
           "responses": ["LMAOOO you actually did it 💀", "This is the best day of my life"],
           "reaction": "😤",
+          "splash": "angry",
           "next": "node_chaos_final"
         },
         {
           "label": "Good boy 😈",
           "responses": ["Good boy 😈"],
           "reaction": "🥵",
+          "splash": "shocked",
           "next": "node_power_path"
         }
       ]
@@ -447,6 +455,7 @@
         {
           "label": "You're pathetic. But keep going.",
           "responses": ["You're pathetic.", "But keep going."],
+          "splash": "smug",
           "next": "node_power_final"
         }
       ]
