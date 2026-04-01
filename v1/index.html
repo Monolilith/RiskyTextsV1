@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Risky Text</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div id="phone-frame">
+    <header id="header">
+      <button id="bgm-toggle" class="bgm-toggle" aria-label="Toggle music">
+        <svg class="bgm-icon bgm-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        </svg>
+        <svg class="bgm-icon bgm-icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+      </button>
+      <img id="header-avatar" class="avatar" src="" alt="">
+      <span id="header-name" class="header-name"></span>
+    </header>
+
+    <div id="chat-area" class="chat-area">
+      <div class="date-divider">Today</div>
+    </div>
+
+    <div id="particle-layer" class="particle-layer"></div>
+
+    <div id="choice-panel" class="choice-panel">
+      <div class="choice-panel-inner">
+        <p class="choice-header">What will you say?</p>
+        <div class="choice-buttons"></div>
+      </div>
+    </div>
+
+    <div id="splash-overlay" class="splash-overlay">
+      <div class="splash-dim"></div>
+      <img class="splash-image" src="" alt="">
+    </div>
+
+    <div id="ending-overlay" class="ending-overlay"></div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
