@@ -8,6 +8,7 @@ import { TypingIndicator } from './ui/TypingIndicator.js';
 import { SoundManager } from './audio/SoundManager.js';
 import { ParticleEffect } from './ui/ParticleEffect.js';
 import { SplashArt } from './ui/SplashArt.js';
+import { DustMotes } from './ui/DustMotes.js';
 
 class Game {
   constructor() {
@@ -44,6 +45,9 @@ class Game {
     this.particles = new ParticleEffect(document.getElementById('particle-layer'));
 
     this.splashArt = new SplashArt(document.getElementById('splash-overlay'));
+
+    new DustMotes(document.getElementById('header'), { count: 6, interval: 2200 });
+    new DustMotes(choicePanelEl, { count: 8, interval: 2000 });
 
     this.choicePanel = new ChoicePanel(
       choicePanelEl,
