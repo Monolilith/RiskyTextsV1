@@ -3,6 +3,10 @@ const SPLASH_FILES = {
   annoyed: 'splash_annoyed.png',
   shocked: 'splash_shock.png',
   smug: 'splash_smug.png',
+  f_angry: 'splash_f_anger.png',
+  f_annoyed: 'splash_f_annoyed.png',
+  f_shocked: 'splash_f_shock.png',
+  f_smug: 'splash_f_smug.png',
 };
 
 export class SplashArt {

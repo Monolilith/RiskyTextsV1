@@ -4,35 +4,29 @@
     "version": "1.0",
     "startNode": "node_start",
     "totalEndings": 4,
-    "exName": "Ex - DO NOT REPLY!!!",
+    "exName": "Ex - DO NOT REPLY",
     "exAvatar": "assets/images/avatar_ex.png"
   },
   "nodes": {
 
     "node_start": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "I miss you so much, gorgeous", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "And I bet you miss me, too... 😏", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Remember how good we used to have it?", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "It's not too late to try again... ", "delay": 1800 },
         { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 2000 }
       ],
       "choices": [
         {
-          "label": "I definitely miss that chest 😍",
-          "responses": ["I definitely miss that chest 😍"],
-          "splash": "smug",
+          "label": "It was pretty amazing...",
+          "responses": ["It was pretty amazing..."],
+          "reaction": "❤️",
           "next": "node_flirty_01"
         },
         {
-          "label": "Um, who are you?",
-          "responses": ["Um, who are you?"],
-          "splash": "annoyed",
-          "next": "node_confused_01"
-        },
-        {
-          "label": "You need to stop texting me.",
-          "responses": ["You need to stop texting me."],
-          "splash": "shocked",
-          "next": "node_defensive_01"
+          "label": "No. I'm not doing this again",
+          "responses": ["No", "I'm not doing this again"],
+          "reaction": "😭",
+          "next": "node_cold_01"
         }
       ]
     },
@@ -41,509 +35,739 @@
 
     "node_flirty_01": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "I knew it 😏", "delay": 1000 },
-        { "sender": "ex", "type": "text", "text": "So why'd you block me then?", "delay": 1500 }
+        { "sender": "ex", "type": "text", "text": "Right? I can't stop thinking about it all", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I haven't seen anyone since we split...", "delay": 1000 },
+        { "sender": "ex", "type": "text", "text": "Have you?", "delay": 1000 }
       ],
       "choices": [
         {
-          "label": "Because you're TOXIC 🚩",
-          "responses": ["Because you're TOXIC 🚩", "But I guess I have a type..."],
-          "reaction": "😍",
-          "next": "node_flirty_02"
+          "label": "Guys like you are hard to come by",
+          "responses": ["Guys like you are hard to come by"],
+          "splash": "m_smug",
+          "next": "node_flirty_02_m"
         },
         {
-          "label": "Maybe I was just scared...",
-          "responses": ["Maybe I was just scared..."],
-          "next": "node_flirty_03"
+          "label": "It's hard to find a girl as hot as you",
+          "responses": ["It's hard to find a girl as hot as you"],
+          "splash": "f_smug",
+          "next": "node_flirty_02_f"
+        }
+      ]
+    },
+    
+    "node_cold_01": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Come on, hear me out", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I can't stop thinking about you", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I haven't seen anyone else", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "Because all the other girls know you're toxic?", "responses": ["Because all the other girls know you're toxic?"], "splash": "shocked","next": "node_chance_m" },
+        {"label": "Yeah, guys like me are hard to find", "responses": ["Yeah, guys like me are hard to find"], "splash": "f_shocked", "next": "node_chance_f" }
+      ]
+    },
+
+    "node_flirty_02_m": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "I knew you still wanted me 😏", "delay": 1000 },
+        { "sender": "ex", "type": "text", "text": "Why'd we even break up, haha", "delay": 1500 }
+      ],
+      "choices": [
+        {
+          "label": "You tell me dude",
+          "responses": ["You tell me dude"],
+          "next": "node_confession_m"
+        },
+        {
+          "label": "Uh, 'cause you were lowkey a jerk?",
+          "responses": ["Uh, 'cause you were lowkey a jerk?"],
+          "splash": "angry",
+          "next": "node_jerk_m"
         }
       ]
     },
 
-    "node_flirty_02": {
+    "node_chance_m": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "Toxic? Me? 😇", "delay": 1000 },
-        { "sender": "ex", "type": "text", "text": "Baby I just love hard", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "You know nobody else gonna treat you like I did", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "No! I haven't even tried to find someone else", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm serious, baby, I can treat you right this time", "delay": 1800 }
       ],
       "choices": [
         {
-          "label": "That's literally the problem 💀",
-          "responses": ["That's literally the problem 💀"],
-          "splash": "annoyed",
-          "next": "node_mid_tension"
-        },
-        {
-          "label": "...you might have a point",
-          "responses": ["...you might have a point"],
-          "next": "node_mid_tension"
-        }
-      ]
-    },
-
-    "node_flirty_03": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Scared of what? Of us?", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "That's the most real thing you've ever said to me", "delay": 1800 }
-      ],
-      "choices": [
-        {
-          "label": "Scared of how much I felt",
-          "responses": ["Scared of how much I felt", "It was a lot"],
-          "next": "node_mid_tension"
-        },
-        {
-          "label": "Scared you'd show up at my door again",
-          "responses": ["Scared you'd show up at my door again 😐"],
-          "next": "node_mid_tension"
-        }
-      ]
-    },
-
-
-
-    "node_confused_01": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Very funny 🙄", "delay": 1000 },
-        { "sender": "ex", "type": "text", "text": "You really gonna play that game?", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "After everything we had?", "delay": 1800 }
-      ],
-      "choices": [
-        {
-          "label": "What exactly did we have? 🤔",
-          "responses": ["What exactly did we have? 🤔"],
-          "splash": "annoyed",
-          "next": "node_confused_02"
-        },
-        {
-          "label": "Okay fine. I know who you are.",
-          "responses": ["Okay fine. I know who you are.", "Hard to forget someone that dramatic"],
-          "next": "node_confused_03"
-        }
-      ]
-    },
-
-    "node_confused_02": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "WOW.", "delay": 800 },
-        { "sender": "ex", "type": "text", "text": "So 6 months meant nothing to you?", "delay": 1500 },
-        { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 2000 },
-        { "sender": "ex", "type": "text", "text": "Look at this and tell me that meant nothing", "delay": 1500 }
-      ],
-      "choices": [
-        {
-          "label": "Okay that photo is unfair 😳",
-          "responses": ["Okay that photo is unfair 😳"],
-          "reaction": "😘",
-          "next": "node_mid_tension"
-        },
-        {
-          "label": "I literally don't remember this",
-          "responses": ["I literally don't remember this"],
-          "next": "node_mid_tension"
-        }
-      ]
-    },
-
-    "node_confused_03": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Dramatic? 💀", "delay": 1000 },
-        { "sender": "ex", "type": "text", "text": "You're the one who ghosted ME", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "I just wanted closure", "delay": 1800 }
-      ],
-      "choices": [
-        {
-          "label": "Closure looks different than selfies at midnight",
-          "responses": ["Closure looks different than selfies at midnight"],
-          "next": "node_mid_tension"
-        },
-        {
-          "label": "Fine. You have my attention.",
-          "responses": ["Fine.", "You have my attention.", "For now."],
-          "next": "node_mid_tension"
-        }
-      ]
-    },
-
-
-
-    "node_defensive_01": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Come on...", "delay": 1000 },
-        { "sender": "ex", "type": "text", "text": "Just hear me out", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "5 minutes. That's all I'm asking", "delay": 1800 }
-      ],
-      "choices": [
-        {
-          "label": "You have 2 minutes. Go.",
-          "responses": ["You have 2 minutes.", "Go."],
-          "next": "node_defensive_02"
-        },
-        {
-          "label": "I'm blocking you again",
-          "responses": ["I'm blocking you again"],
-          "next": "node_defensive_03"
-        }
-      ]
-    },
-
-    "node_defensive_02": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Okay okay", "delay": 800 },
-        { "sender": "ex", "type": "text", "text": "I know I messed up", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "I was selfish and I didn't appreciate what we had", "delay": 2000 },
-        { "sender": "ex", "type": "text", "text": "But I've been thinking about you every day since", "delay": 1800 }
-      ],
-      "choices": [
-        {
-          "label": "That's... actually mature of you",
-          "responses": ["That's... actually mature of you", "Who are you and what did you do with my ex"],
-          "next": "node_mid_tension"
-        },
-        {
-          "label": "Words are cheap",
-          "responses": ["Words are cheap"],
-          "next": "node_mid_tension"
-        }
-      ]
-    },
-
-    "node_defensive_03": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "WAIT", "delay": 800 },
-        { "sender": "ex", "type": "text", "text": "Please don't", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "I'll send you something first", "delay": 1500 },
-        { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 2000 }
-      ],
-      "choices": [
-        {
-          "label": "...why would you send that 😳",
-          "responses": ["...why would you send that 😳", "Actually don't answer that"],
-          "next": "node_mid_tension"
-        },
-        {
-          "label": "Reported for harassment 🚨",
-          "responses": ["Reported for harassment 🚨"],
-          "reaction": "💀",
-          "splash": "shocked",
-          "next": "node_cold_path_01"
-        }
-      ]
-    },
-
-
-
-    "node_mid_tension": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Look, I've changed", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "I've been thinking about us every single day", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "Just give me one more chance", "delay": 1500 }
-      ],
-      "choices": [
-        {
-          "label": "You always say that...",
-          "responses": ["You always say that..."],
-          "next": "node_rekindle_path"
-        },
-        {
-          "label": "Prove it then 💅",
-          "responses": ["Prove it then 💅"],
+          "label": "Prove it.", 
+          "responses": ["Prove it."], 
           "reaction": "😳",
-          "next": "node_chaos_path"
+          "next": "node_proveit_01_m" },
+        {
+          "label": "Yeah no, blocking you", 
+          "responses": ["Yeah no, blocking you"], 
+          "splash": "angry", 
+          "next": "node_yeahno_m" }
+      ]
+    },
+
+    "node_yeahno_m": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "WAIT", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Please gorgeous I'll do anything", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "Bye bye LOL", "responses": ["Bye bye LOL"], "next": "end_m_blocked" },
+        {"label": "Anything at all?", "responses": ["Anything at all?"], "reaction": "😳", "next": "node_proveit_01_m" }
+      ]
+    },
+
+    "node_confession_m": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "I dunno, something stupid", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "Like me trying to make out with your bestie", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "...", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "You did WHAT. 😡", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I didn't actually!", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "You said I did something like that and we got in a fight", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Then you dumped me", "delay": 1800 }
+      ],
+      "choices": [
+        {
+          "label": "No, YOU dumped ME",
+          "responses": ["No, YOU dumped ME"],
+          "next": "node_confession_02_m"
         },
         {
-          "label": "Absolutely not. We're done.",
-          "responses": ["Absolutely not.", "We're done.", "Bye."],
+          "label": "That is NOT why we fought!",
+          "responses": ["That is NOT why we fought!"],
+          "next": "node_confession_02_m"
+        },
+        {
+          "label": "That's such a bad example, OMG",
+          "responses": ["That's such a bad example, OMG"],
+          "reaction": "😅",
+          "next": "node_confession_escape_02_m"
+        }
+      ]
+    },
+    "node_confession_02_m": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Are you sure?", "delay": 1200 },
+        { "sender": "player", "type": "text", "text": "OMG, don't gaslight me", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Did you make out with her or not???", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "No!", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Did you TRY to?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "NO", "delay": 1800 }
+      ],
+      "choices": [
+        {
+          "label": "If I ask her, will she say you did?",
+          "responses": ["If I ask her, will she say you did?"],
+          "next": "node_confession_03_m"
+        },
+        {
+          "label": "Are you SURE that's the truth?",
+          "responses": ["Are you SURE that's the truth?"],
+          "next": "node_confession_escape_01_m"
+        }
+      ]
+    },
+    "node_confession_escape_01_m": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "I wouldn't lie to you baby", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Never again", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Ooookay well. That was a really stupid thing to say", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "You're right :sad: it was", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "But I didn't do anything like that", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm glad you understand", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Riiight", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "So you forgive me?", "delay": 1800 }
+      ],
+      "choices": [
+        {
+          "label": "Absolutely not. That was sarcasm",
+          "responses": ["Absolutely not", "That was sarcasm"],
           "splash": "angry",
-          "next": "node_cold_path_01"
-        }
-      ]
-    },
-
-
-
-    "node_rekindle_path": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "I know I know", "delay": 1000 },
-        { "sender": "ex", "type": "text", "text": "But this time is different", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "I started therapy", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "I even deleted my dating apps", "delay": 1500 }
-      ],
-      "choices": [
-        {
-          "label": "You deleted your dating apps? For ME?",
-          "responses": ["You deleted your dating apps?", "For ME? 🥺"],
-          "next": "node_rekindle_02"
+          "next": "node_accusations_01_m"
         },
         {
-          "label": "Therapy doesn't fix everything",
-          "responses": ["Therapy doesn't fix everything"],
-          "next": "node_rekindle_skeptic"
+          "label": "Not yet, but I'm considering it",
+          "responses": ["Not yet", "But I'm considering it"],
+          "reaction": "🥺",
+          "next": "node_forgive_01_m"
         }
       ]
     },
-
-    "node_rekindle_02": {
+    "node_confession_escape_02_m": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "Of course for you", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "You're the only person who ever made me feel real", "delay": 2000 },
-        { "sender": "ex", "type": "text", "text": "Can I come over? Just to talk?", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "You're right :sad: it was", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "But I didn't do anything like that", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm glad you understand", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Riiight", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "So you forgive me?", "delay": 1800 }
       ],
       "choices": [
         {
-          "label": "...fine. But JUST to talk.",
-          "responses": ["...fine.", "But JUST to talk."],
-          "next": "node_rekindle_final"
-        },
-        {
-          "label": "No. This is exactly how it starts.",
-          "responses": ["No.", "This is exactly how it starts.", "I know your playbook."],
-          "next": "node_cold_path_01"
-        }
-      ]
-    },
-
-    "node_rekindle_skeptic": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "You're right, it doesn't", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "But it helped me see how much I took you for granted", "delay": 2000 },
-        { "sender": "ex", "type": "text", "text": "I'm not asking you to forgive me tonight", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "Just... don't block me again?", "delay": 1500 }
-      ],
-      "choices": [
-        {
-          "label": "I'll think about it",
-          "responses": ["I'll think about it"],
-          "next": "node_rekindle_final"
-        },
-        {
-          "label": "No promises",
-          "responses": ["No promises"],
-          "next": "node_cold_path_01"
-        }
-      ]
-    },
-
-    "node_rekindle_final": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "I'm smiling so hard right now", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "You won't regret this", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "I promise things will be different", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "❤️", "delay": 1000 }
-      ],
-      "choices": [
-        {
-          "label": "Just... don't make me regret this 💕",
-          "responses": ["Just... don't make me regret this 💕"],
-          "next": "ending_toxic"
-        },
-        {
-          "label": "We'll see about that 😏",
-          "responses": ["We'll see about that 😏"],
-          "next": "ending_toxic"
-        }
-      ]
-    },
-
-
-
-    "node_chaos_path": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Prove it? Okay bet", "delay": 1000 },
-        { "sender": "ex", "type": "text", "text": "What do you want me to do?", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "I'll literally do anything", "delay": 1200 }
-      ],
-      "choices": [
-        {
-          "label": "Post on your story that I'm the best you ever had",
-          "responses": ["Post on your story that I'm the best you ever had", "Right now. I'm watching your feed."],
-          "next": "node_chaos_02"
-        },
-        {
-          "label": "Delete your exes' numbers. ALL of them.",
-          "responses": ["Delete your exes' numbers.", "ALL of them.", "While I watch."],
-          "next": "node_chaos_03"
-        }
-      ]
-    },
-
-    "node_chaos_02": {
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Are you serious rn? 😳", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "...", "delay": 2000 },
-        { "sender": "ex", "type": "text", "text": "Done.", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "Happy? 😤", "delay": 1200 }
-      ],
-      "choices": [
-        {
-          "label": "LMAOOO you actually did it 💀",
-          "responses": ["LMAOOO you actually did it 💀", "This is the best day of my life"],
-          "reaction": "😤",
+          "label": "Absolutely not. That was sarcasm",
+          "responses": ["Absolutely not", "That was sarcasm"],
           "splash": "angry",
-          "next": "node_chaos_final"
+          "next": "node_accusations_01_m"
         },
         {
-          "label": "Good boy 😈",
-          "responses": ["Good boy 😈"],
-          "reaction": "🥵",
-          "splash": "shocked",
-          "next": "node_power_path"
+          "label": "Not yet, but I'm considering it",
+          "responses": ["Not yet", "But I'm considering it"],
+          "reaction": "🥺",
+          "next": "node_forgive_01_m"
         }
       ]
     },
-
-    "node_chaos_03": {
+    "node_confession_03_m": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "That's... a lot", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "But fine", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "Deleting them now", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "All gone. You're the only one in my contacts now 😤", "delay": 2500 }
+        { "sender": "ex", "type": "text", "text": "It was a misunderstanding", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Oh my GOD.", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Okay, fine", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "That was stupid of me", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I shouldn't have done it and I'm sorry", "delay": 1800 }
       ],
       "choices": [
         {
-          "label": "That's so unhinged, I'm crying 😂",
-          "responses": ["That's so unhinged omg", "I'm actually crying 😂"],
-          "next": "node_chaos_final"
+          "label": "Good job! Wasn't that easy?",
+          "responses": ["Good job! Wasn't that easy?"],
+          "next": "node_forgive_01_m"
         },
         {
-          "label": "Now send me a selfie. On your knees.",
-          "responses": ["Now send me a selfie.", "On your knees."],
-          "next": "node_power_path"
+          "label": "You don't sound convincing",
+          "responses": ["You don't sound convincing"],
+          "splash": "annoyed",
+          "reaction": "🙄",
+          "next": "node_argue_01_m"
         }
       ]
     },
 
-    "node_chaos_final": {
+    "node_jerk_m": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "I can't believe you're making me do all this 😭", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "But honestly?", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "If it means you'll talk to me again", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "I'd do it all over", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "So... are we good? 🥺", "delay": 2000 }
+        { "sender": "ex", "type": "text", "text": "Wait wait wait", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "Name ONE time I was a jerk", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Just one? Sure", "delay": 1800 }
       ],
       "choices": [
         {
-          "label": "This is the funniest thing that's ever happened to me",
-          "responses": ["This is the funniest thing that's ever happened to me"],
-          "next": "ending_chaotic"
+          "label": "You said I was ugly on our last date",
+          "responses": ["You said I was ugly on our last date"],
+          "next": "node_jerk_02_m"
         },
         {
-          "label": "We are SO not good. But this was entertaining.",
-          "responses": ["We are SO not good.", "But this was entertaining."],
-          "next": "ending_chaotic"
+          "label": "You ignored me completely on my birthday",
+          "responses": ["You ignored me completely on my birthday"],
+          "next": "node_jerk_03_m"
+        },
+        {
+          "label": "You straight-up crashed my car",
+          "responses": ["You straight-up crashed my car"],
+          "next": "node_jerk_04_m"
         }
       ]
     },
 
+  "node_jerk_02_m": {
+    "messages": [
+      { "sender": "ex", "type": "text", "text": "I didn't say that", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "And you weren't! ", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "I was just surprised by your outfit", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "You said I 'could have worn something more flattering'", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "How is that ANY DIFFERENT from calling me ugly", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "Okay, fine! That was stupid of me", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "I shouldn't have done it and I'm sorry", "delay": 1800 }
+    ],
+    "choices": [
+      {
+        "label": "Good job! Wasn't that easy?",
+        "responses": ["Good job! Wasn't that easy?"],
+        "splash": "angry",
+        "next": "node_forgive_01_m"
+      },
+      {
+        "label": "You don't sound convincing",
+        "responses": ["You don't sound convincing"],
+        "splash": "annoyed",
+        "reaction": "🙄",
+        "next": "node_argue_01_m"
+      }
+    ]
+  },
+  "node_jerk_03_m": {
+    "messages": [
+      { "sender": "ex", "type": "text", "text": "I was literally there at the party", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "Yeah. And you were on your phone the whole time", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "The guys kept texting me", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "Then why didn't you turn off your phone???", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "Okay, fine! That was stupid of me", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "I shouldn't have done it and I'm sorry", "delay": 1800 }
+    ],
+    "choices": [
+      {
+        "label": "Good job! Wasn't that easy?",
+        "responses": ["Good job! Wasn't that easy?"],
+        "next": "node_forgive_01_m"
+      },
+      {
+        "label": "You don't sound convincing",
+        "responses": ["You don't sound convincing"],
+        "splash": "annoyed",
+        "reaction": "🙄",
+        "next": "node_argue_01_m"
+      }
+    ]
+  },
+  "node_jerk_04_m": {
+    "messages": [
+      { "sender": "ex", "type": "text", "text": "That was an accident!", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "Like, literally", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "The cops let you off easy", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "Doesn't mean I have to", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "Okay, fine! That was stupid of me", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "I shouldn't have done it and I'm sorry", "delay": 1800 }
+    ],
+    "choices": [
+      {
+        "label": "Good job! Wasn't that easy?",
+        "responses": ["Good job! Wasn't that easy?"],
+        "next": "node_forgive_01_m"
+      },
+      {
+        "label": "You don't sound convincing",
+        "responses": ["You don't sound convincing"],
+        "splash": "annoyed",
+        "reaction": "🙄",
+        "next": "node_argue_01_m"
+      }
+    ]
+  },
+  "node_argue_01_m": {
+    "messages": [
+      { "sender": "ex", "type": "text", "text": "I'm sorry you don't think I sound convincing", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "You're NOT helping your case", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "What do you want from me then???", "delay": 1800 }
+    ],
+    "choices": [
+      {
+        "label": "A little effort would be great",
+        "responses": ["A little effort would be great"],
+        "next": "node_effort_01_m"
+      },
+      {
+        "label": "Actually, screw this",
+        "responses": ["Actually, screw this"],
+        "splash": "angry",
+        "next": "node_argue_02_m"
+      }
+    ]
+  },
+
+  "node_effort_01_m": {
+    "messages": [
+      { "sender": "ex", "type": "text", "text": "...", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "You're right. I'm sorry", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "I mean it this time, I've been a jerk", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "You deserve better", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "You're right", "delay": 1800 }
+    ],
+    "choices": [
+      { "label": "So prove you're better", "responses": ["So prove you're better"], "splash": "shock", "next": "node_proveit_01_m" },
+      { "label": "But that's a good start", "responses": ["But that's a good start"], "splash": "smug", "next": "node_forgive_01_m" }
+    ]
+  },
+
+"node_forgive_01_m": {
+  "messages": [
+    { "sender": "ex", "type": "text", "text": "YES", "delay": 1800 },
+    { "sender": "player", "type": "text", "text": "Don't get too excited", "delay": 1800 },
+    { "sender": "player", "type": "text", "text": "I haven't forgiven you YET", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "What will it take to convince you?", "delay": 1800 }
+  ],
+  "choices": [
+    { "label": "I just need time", "responses": ["I just need time"], "next": "node_time_01_m" },
+    { "label": "Maybe one nice date?", "responses": ["Maybe one nice date?"], "splash": "smug", "next": "node_date_01_m" }
+  ]
+
+},
+"node_time_01_m": {
+  "messages": [
+    { "sender": "ex", "type": "text", "text": "How much time?", "delay": 1800 },
+    { "sender": "player", "type": "text", "text": "I don't know. I need you to be patient with me", "delay": 1800 },
+    { "sender": "player", "type": "text", "text": "Can you do that?", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "Yes baby, I promise", "delay": 1800 },
+    { "sender": "player", "type": "text", "text": "", "delay": 1800 }
+  ],
+  "choices": [
+    { "label": "Keep that promise and maybe we'll have something", "responses": ["Keep that promise and maybe we'll have something"], "next": "end_m_patience" }
+  ]
+},
+
+"node_date_01_m": {
+  "messages": [
+    { "sender": "ex", "type": "text", "text": "Oh yeah? I'll take you to that KBBQ place", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "I'll pay for everything 💸", "delay": 1800 },
+    { "sender": "player", "type": "text", "text": "And you won't be on your phone? Or judge my clothes?", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "I won't I promise", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "Maybe this sunday?", "delay": 1800 }
+  ],
+  "choices": [
+    { "label": "It's a date", "responses": ["It's a date"], "next": "end_m_freshstart" },
+    { "label": "Hmmm. No.", "responses": ["Hmmm. No."], "splash": "angry", "next": "end_m_fakeout" }
+  ]
+},
+
+"node_argue_02_m": {
+  "messages": [
+    { "sender": "ex", "type": "text", "text": "Oh, come on!", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "I'm really trying here", "delay": 1800 },
+    { "sender": "player", "type": "text", "text": "I can tell by the way you're repeating all your worst habits", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "You really think you're all that, huh?", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "You have such a big freaking ego", "delay": 1800 }
+  ],
+  "choices": [
+    { "label": "Says the guy who texted ME", "responses": ["Says the guy who texted ME"], "next": "end_m_cutoff" },
+    { "label": "Wait, maybe that was too harsh", "responses": ["Wait, maybe that was too harsh"], "next": "end_m_simmering" }
+  ]
+},
+
+"node_proveit_01_m": {
+  "messages": [
+    { "sender": "ex", "type": "text", "text": "Just name your price", "delay": 1800 }
+  ],
+  "choices": [
+    { "label": "Delete your other exes' numbers", "responses": ["Delete your other exes' numbers"], "next": "node_proveit_02_m" },
+    { "label": "Get on your knees and beg", "responses": ["Get on your knees and beg"], "next": "node_proveit_03_m" },
+    { "label": "Post on Insta that I'm the best you ever had", "responses": ["Post on Insta that I'm the best you ever had"], "next": "node_proveit_04_m" }
+  ]
+},
+
+"node_proveit_02_m": {
+  "messages": [
+    { "sender": "ex", "type": "text", "text": "That's a lot... but okay", "delay": 3000 },
+    { "sender": "ex", "type": "text", "text": "It's done.", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "Are you happy?", "delay": 1800 }
+  ],
+  "choices": [
+    { "label": "Good boy 😏", "responses": ["Good boy 😏"], "next": "end_m_power" },
+    { "label": "I can't believe you actually did it 🤣", "responses": ["I can't believe you actually did it 🤣"], "next": "end_m_chaos" }
+  ]
+},
+
+"node_proveit_03_m": {
+  "messages": [
+    { "sender": "ex", "type": "text", "text": "That's insane", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "...", "delay": 3000 },
+    { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 1500 },
+    { "sender": "ex", "type": "text", "text": "Please take me back, baby, I need you", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "I'm nothing without you", "delay": 1800 }
+  ],
+  "choices": [
+    { "label": "Good boy 😏", "responses": ["Good boy 😏"], "next": "end_m_power" },
+    { "label": "I can't believe you actually did it 🤣", "responses": ["I can't believe you actually did it 🤣"], "next": "end_m_chaos" }
+  ]
+},
+
+"node_proveit_04_m": {
+  "messages": [
+    { "sender": "ex", "type": "text", "text": "That's gonna hurt... but I'll do it for you", "delay": 3000 },
+    { "sender": "ex", "type": "text", "text": "It's done.", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "Are you happy?", "delay": 1800 }
+  ],
+  "choices": [
+    { "label": "Good boy 😏", "responses": ["Good boy 😏"], "next": "end_m_power" },
+    { "label": "I can't believe you actually did it 🤣", "responses": ["I can't believe you actually did it 🤣"], "next": "end_m_chaos" }
+  ]
+},
 
 
-    "node_power_path": {
+    "node_flirty_02_f": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "You're really enjoying this aren't you", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "Fine. You want to be in charge?", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "I'll let you", "delay": 1200 },
-        { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 2000 }
+        { "sender": "ex", "type": "text", "text": "I knew you still wanted me 😏", "delay": 1000 },
+        { "sender": "ex", "type": "text", "text": "Why'd we even break up? lol", "delay": 1500 }
       ],
       "choices": [
         {
-          "label": "That's more like it 👑",
-          "responses": ["That's more like it 👑", "Now we're getting somewhere"],
-          "reaction": "❤️",
-          "next": "node_power_final"
+          "label": "You tell me girl",
+          "responses": ["You tell me girl"],
+          "next": "node_confession_f"
         },
         {
-          "label": "You're pathetic. But keep going.",
-          "responses": ["You're pathetic.", "But keep going."],
-          "splash": "smug",
-          "next": "node_power_final"
+          "label": "Uh, 'cause you were lowkey crazy?",
+          "responses": ["Uh, 'cause you were lowkey crazy?"],
+          "next": "node_jerk_f"
         }
       ]
     },
 
-    "node_power_final": {
+    "node_chance_f": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "I'll do whatever you say", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "Just please don't disappear on me again", "delay": 2000 },
-        { "sender": "ex", "type": "text", "text": "I need you", "delay": 1500 }
+        { "sender": "ex", "type": "text", "text": "'Like you' isn't good enough", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I want YOU. No one else", "delay": 1800 }
       ],
       "choices": [
-        {
-          "label": "I'll keep you around. As entertainment.",
-          "responses": ["I'll keep you around.", "As entertainment. 😈"],
-          "next": "ending_power"
-        },
-        {
-          "label": "Say 'I'm yours' and I'll think about it",
-          "responses": ["Say 'I'm yours' and I'll think about it"],
-          "next": "ending_power"
-        }
+        {"label": "Prove it", "responses": ["Prove it"], "next": "node_proveit_01_m" },
+        {"label": "Yeah no, blocking you", "responses": ["Yeah no, blocking you"], "next": "node_yeahno_f" }
       ]
     },
 
-
-
-    "node_cold_path_01": {
+    "node_yeahno_f": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "Wow. Really?", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "After everything?", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "Fine. Your loss.", "delay": 2000 }
+        { "sender": "ex", "type": "text", "text": "WAIT", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Please please please give me a chance", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I can be whatever you need baby", "delay": 1800 }
       ],
       "choices": [
-        {
-          "label": "Blocked. Again. ✌️",
-          "responses": ["Blocked.", "Again.", "✌️"],
-          "next": "node_cold_final"
-        },
-        {
-          "label": "Wait... maybe I was too harsh",
-          "responses": ["Wait...", "Maybe I was too harsh"],
-          "next": "node_cold_reconsider"
-        }
+        {"label": "Nope. Bye", "responses": ["Nope", "Bye"], "next": "end_f_blocked" },
+        {"label": "Oh yeah? Prove it.", "responses": ["Oh yeah? Prove it."], "next": "node_proveit_01_f" }
       ]
     },
 
-    "node_cold_reconsider": {
+    "node_confession_f": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "Too harsh?", "delay": 1000 },
-        { "sender": "ex", "type": "text", "text": "No, you were right", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "I shouldn't have texted", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "I just... I had to try one last time", "delay": 2000 }
+        { "sender": "ex", "type": "text", "text": "IDK it was super petty", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "You said I hit your dog or something. lol", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "...", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I don't remember hearing about that.", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Did that happen?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "OMG no! It's just an example", "delay": 1800 }
       ],
       "choices": [
-        {
-          "label": "I hope you find what you're looking for. Just not with me.",
-          "responses": ["I hope you find what you're looking for.", "Just not with me."],
-          "next": "node_cold_final"
-        },
-        {
-          "label": "One last time better mean ONE LAST TIME",
-          "responses": ["One last time better mean ONE LAST TIME"],
-          "next": "node_cold_final"
-        }
+        {"label": "Seems pretty specific for an example", "responses": ["Seems pretty specific for an example"], "next": "node_confession_02_f" },
+        {"label": "You should have said that up front", "responses": ["Okay, but", "You should have said that up front"], "next": "node_confession_escape_01_f" }
       ]
     },
 
-    "node_cold_final": {
+    "node_confession_02_f":{
       "messages": [
-        { "sender": "ex", "type": "text", "text": "...", "delay": 2500 },
-        { "sender": "ex", "type": "text", "text": "Goodbye then", "delay": 2000 }
+        { "sender": "ex", "type": "text", "text": "OMG you're so literal", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I made that up, okay? Literally made it up just now", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "It didn't actually happen", "delay": 1800 }
       ],
       "choices": [
-        {
-          "label": "Goodbye.",
-          "responses": ["Goodbye."],
-          "next": "ending_cold"
-        },
-        {
-          "label": "✓ Read",
-          "responses": [],
-          "next": "ending_cold"
-        }
+        {"label": "Then why is he so scared of you?", "responses": ["Then why is he so scared of you?"], "next": "node_confession_03_f" },
+        {"label": "You promise that's the truth?", "responses": ["You promise that's the truth?"], "next": "node_confession_escape_02_f" },
+        {"label": "You're straight up lying", "responses": ["You're straight up lying"], "splash": "f_angry", "next": "node_argue_01_f" }
+      ]
+    },
+
+    "node_confession_03_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "I maybe kicked him ONCE on accident", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "You still should have told me", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I guess", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "You guess?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm sorry I did it, okay?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "See, that wasn't hard", "responses": ["See, that wasn't hard"], "next": "node_confession_escape_02_f" },
+        {"label": "Can you try to sound like you mean it?", "responses": ["Can you try to sound like you mean it?"], "splash": "f_annoyed", "next": "node_argue_01_f" }
+      ]
+    },
+
+    "node_confession_escape_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "It is im sorry 😭 but I'm glad you understand", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Bc I definitely did not do that", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I would never hurt him", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Okay :/", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "So you forgive me? Like in general?", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "No way! That was sarcasm", "responses": ["No way!", "That was sarcasm"], "splash": "f_angry", "next": "node_accusations_01_f" },
+        {"label": "Not yet, but I'm considering it", "responses": ["Not yet", "But I'm considering it"], "next": "node_forgive_01_f" }
+      ]
+    },
+
+    "node_jerk_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Um??? Rude", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I have NEVER been like that to you", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "You were almost always like that", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "If you thought I was being crazy why did you never say anything???", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I did", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "When you said game night was stupid", "responses": ["When you said game night was stupid"], "next": "node_jerk_01_f" },
+        {"label": "When I cooked for you and you complained nonstop", "responses": ["When I cooked for you and you complained nonstop"], "next": "node_jerk_01_f" },
+        {"label": "When you told me to cancel a hang with my oldest friend", "responses": ["When you told me to cancel a hang with my oldest friend"], "next": "node_jerk_01_f" }
+      ]
+    },
+
+    "node_jerk_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Rolling dice and pretending to be elves is kinda stupid", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "But I said I wouldn't be mean about it anymore", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Well, you broke that promise literally just now", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I guess", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "You guess?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm sorry I did that, okay?", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "See, that wasn't hard", "responses": ["See, that wasn't hard"], "next": "node_confession_escape_02_f" },
+        {"label": "Can you try to sound like you mean it?", "responses": ["Can you try to sound like you mean it?"], "splash": "f_annoyed", "next": "node_argue_01_f" }
+      ]
+    },
+
+    "node_jerk_02_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Okay, maybe it wasn't a perfect dinner date", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "But I wasn't just whining the entire time!", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Every other thing you said was whining", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I put a lot of work into that for you", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I guess", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "You guess?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm sorry I did that, okay?", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "See, that wasn't hard", "responses": ["See, that wasn't hard"], "next": "node_confession_escape_02_f" },
+        {"label": "Can you try to sound like you mean it?", "responses": ["Can you try to sound like you mean it?"], "splash": "f_annoyed", "next": "node_argue_01_f" }
+      ]
+    },
+
+    "node_jerk_03_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "You mean that girl you went to school with?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "She was LITERALLY making moves on you, Mr. Oblivious", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Even if she was, I wouldn't have cheated with her", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "That's an insane thing to assume I'd just do", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I guess", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "You guess?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm sorry I did that, okay?", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "See, that wasn't hard", "responses": ["See, that wasn't hard"], "next": "node_confession_escape_02_f" },
+        {"label": "Can you try to sound like you mean it?", "responses": ["Can you try to sound like you mean it?"], "splash": "f_annoyed", "next": "node_argue_01_f" }
+      ]
+    },
+
+    "node_confession_escape_02_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "So you forgive me?", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "No way! That was sarcasm", "responses": ["No way", "That was sarcasm"], "splash": "f_angry", "next": "node_accusations_01_f" },
+        {"label": "Not yet, but I'm considering it", "responses": ["Not yet", "But I'm considering it"], "next": "node_forgive_01_f" }
+      ]
+    },
+
+    "node_argue_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "I do mean it!", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Who's being crazy now, huh?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "That isn't fair and you know it", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Well what do you want from me???", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "For you to actually care about this", "responses": ["For you to actually care about this"], "next": "node_effort_01_f" },
+        {"label": "You know what? I'm done.", "responses": ["You know what? I'm done."], "splash": "angry", "next": "node_accusations_01_f" }
+      ]
+    },
+
+    "node_effort_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "I care, I just...", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "No, you're right. I'm sorry", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "You deserve to be appreciated too", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "You're right. I do", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "Now would be a good time to start", "responses": ["Now would be a good time to start"], "next": "node_proveit_01_f" },
+        {"label": "But I'm willing to hear you out", "responses": ["But I'm willing to hear you out"], "next": "node_forgive_01_f" }
+      ]
+    },
+
+    "node_accusations_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Baby PLEASE", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm really trying", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I can tell by the way you're doing the same crappy things you always do", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "UGH, you're so full of it!", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I can't believe I'm putting up with this", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "Says the girl who texted ME", "responses": ["Says the girl who texted ME!"], "next": "end_f_cutoff" },
+        {"label": "Wait, maybe I'm being too harsh", "responses": ["Wait", "Maybe I'm being too harsh"], "reaction": "🙄", "next": "end_f_harsh" }
+      ]
+    },
+
+
+    "node_forgive_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Really? Thank you so much!", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Don't get too excited", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I haven't forgiven you YET", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Oh...", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "What will it take to convince you?", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "I just need time", "responses": ["I just need time"], "next": "end_f_patience" },
+        {"label": "Maybe one nice date?", "responses": ["Maybe one nice date?"], "next": "node_date_01_f" }
+      ]
+    },
+
+    "node_date_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Oh yeah? I'll take you to that kbbq place", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'll pay for everything 💸", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "And you won't be on your phone? or judge my clothes?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I won't I promise", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Maybe this sunday? 🥺", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "It's a date", "responses": ["It's a date"], "next": "end_f_freshstart" },
+        {"label": "Hmmm. No.", "responses": ["Hmmm. No."], "next": "end_f_fakeout" }
+      ]
+    },
+
+    "node_proveit_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "I need you, baby, I love you so much", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I miss you every second of every day", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I need you to take action then", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "What do you want me to do, baby?", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "Take charge for once", "responses": ["Take charge for once"], "splash": "f_smug","next": "end_f_femdom" },
+        {"label": "Post on insta that I'm the best you ever had", "responses": ["Post on insta that I'm the best you ever had"], "next": "node_insta_01_f" },
+        {"label": "You figure it out", "responses": ["I'm done telling you exactly what to do.", "Figure it out yourself this time"], "next": "node_beg_01_f" }
+      ]
+    },
+
+    "node_insta_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "That's such a huge ask", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "But... I guess it's also true", "delay": 3000 },
+        { "sender": "player", "type": "text", "text": "There. Check Insta", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Are you happy now?", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "It's a good start", "responses": ["It's a good start"], "next": "end_f_control" },
+        {"label": "You're so desperate :rofl:", "responses": ["WOW", "I can't believe you're actually that desperate 🤣"], "next": "end_f_chaos" }
+      ]
+    },
+
+    "node_beg_01_f": {
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "I'll come over right now", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "We can do whatever you want", "delay": 3000 },
+        { "sender": "ex", "type": "text", "text": "Make out, play games, it's up to you", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "And I'll even stay the night :pleading:", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Just say you want me", "delay": 1800 }
+      ],
+      "choices": [
+        {"label": "I want you", "responses": ["It's a good start"], "next": "end_f_control" },
+        {"label": "You're so desperate :rofl:", "responses": ["WOW", "I can't believe you're actually that desperate 🤣"], "next": "end_f_chaos" }
       ]
     },
 
 
 
-    "ending_toxic": {
+
+
+    "end_m_freshstart": {
       "type": "ending",
       "messages": [
         { "sender": "ex", "type": "text", "text": "On my way 🏃", "delay": 1200 },
@@ -551,7 +775,7 @@
         { "sender": "ex", "type": "text", "text": "I love you", "delay": 2500 }
       ],
       "ending": {
-        "id": "toxic_loop",
+        "id": "fresh_start_m",
         "title": "Toxic Loop",
         "adjectives": ["Obsessive", "Delusional", "Explosive"],
         "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
@@ -559,37 +783,78 @@
       }
     },
 
-    "ending_cold": {
+    "end_m_simmering": {
       "type": "ending",
       "messages": [
-        { "sender": "ex", "type": "text", "text": "...", "delay": 2500 }
+        { "sender": "ex", "type": "text", "text": "Yeah, you are", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I don't need this", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "We both got heated. Let's just relax", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I'll text you back when I'm calmer, okay?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "...", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Fine", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "But don't make me wait around forever", "delay": 1800 }
       ],
       "ending": {
-        "id": "cold_escape",
-        "title": "Cold Escape",
+        "id": "simmering_m",
+        "title": "Cooldown",
         "adjectives": ["Ruthless", "Detached", "Free"],
         "summary": "You blocked him for good. He never texted again. You feel... nothing.",
-        "image": "assets/images/ending_cold.png"
-      }
-    },
-
-    "ending_chaotic": {
-      "type": "ending",
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Wait did you just screenshot that", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "PLEASE don't post that anywhere", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "HELLO???", "delay": 2000 }
-      ],
-      "ending": {
-        "id": "chaotic_spiral",
-        "title": "Chaotic Spiral",
-        "adjectives": ["Unhinged", "Hilarious", "Legendary"],
-        "summary": "You turned him into a meme. The group chat has never been more alive. He's still texting.",
         "image": "assets/images/ending_chaotic.png"
       }
     },
 
-    "ending_power": {
+    "end_m_cutoff": {
+    "type": "ending",
+    "messages": [
+      { "sender": "ex", "type": "text", "text": "Only because I was bored!", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "Are you serious?", "delay": 1800 },
+      { "sender": "player", "type": "text", "text": "Fine. I'm blocking you", "delay": 1800 },
+      { "sender": "ex", "type": "text", "text": "Whatever. Thanks for wasting my time", "delay": 1800 }
+    ],
+    "ending": {
+      "id": "cutoff_m",
+      "title": "Cutoff",
+        "adjectives": ["Ruthless", "Detached", "Free"],
+        "summary": "You blocked him for good. He never texted again. You feel... nothing.",
+        "image": "assets/images/ending_chaotic.png"
+      }
+    },
+
+    "end_m_fakeout": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "What????", "delay": 1200 },
+        { "sender": "player", "type": "text", "text": "LOL I can't believe how easy it was to get ur hopes up", "delay": 1500 },
+        { "sender": "ex", "type": "text", "text": "Are you serious rn?", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "You're actually evil", "delay": 2500 },
+        { "sender": "player", "type": "text", "text": "Yeah well, you deserve it", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "If you ever text me again I'll do the same thing, so...", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Bye <3", "delay": 1800 }
+      ],
+      "ending": {
+        "id": "fakeout_m",
+        "title": "Fakeout",
+        "adjectives": ["Ruthless", "Detached", "Free"],
+        "summary": "You blocked him for good. He never texted again. You feel... nothing.",
+        "image": "assets/images/ending_chaotic.png"
+      }
+    },
+
+    "end_m_blocked": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "...", "delay": 1200 }
+      ],
+      "ending": {
+        "id": "blocked_m",
+        "title": "Blocked",
+        "adjectives": ["Ruthless", "Detached", "Free"],
+        "summary": "You blocked him for good. He never texted again. You feel... nothing.",
+        "image": "assets/images/ending_chaotic.png"
+      }
+    },
+
+    "end_m_power": {
       "type": "ending",
       "messages": [
         { "sender": "ex", "type": "text", "text": "I'm yours", "delay": 1500 },
@@ -597,11 +862,149 @@
         { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 2500 }
       ],
       "ending": {
-        "id": "power_move",
+        "id": "power_move_m",
         "title": "Power Move",
         "adjectives": ["Dominant", "Savage", "Iconic"],
         "summary": "You turned the tables. He's wrapped around your finger now. The ex becomes the simp.",
         "image": "assets/images/ending_power.png"
+      }
+    },
+
+    "end_m_chaos": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "What.", "delay": 1500 },
+        { "sender": "player", "type": "text", "text": "I just sent a screenshot to the GC ❤️", "delay": 2000 },
+        { "sender": "player", "type": "text", "text": "Congrats on proving you're pathetic to everyone we know!", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "WHAT?!", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "Why would you do that???", "delay": 2000 },
+        { "sender": "player", "type": "text", "text": "LOL why not 😊", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "YOU'RE INSANE", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "That's so messed up 😭 I'm blocking you ", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "I hope I never see you again", "delay": 2000 }
+      ],
+      "ending": {
+        "id": "power_move_m",
+        "title": "Power Move",
+        "adjectives": ["Dominant", "Savage", "Iconic"],
+        "summary": "You turned the tables. He's wrapped around your finger now. The ex becomes the simp.",
+        "image": "assets/images/ending_power.png"
+      }
+    },
+
+    "end_f_freshstart": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "On my way 🏃", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "Don't change your mind this time", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I love you", "delay": 2500 }
+      ],
+      "ending": {
+        "id": "fresh_start_m",
+        "title": "Toxic Loop",
+        "adjectives": ["Obsessive", "Delusional", "Explosive"],
+        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
+        "image": "assets/images/ending_toxic.png"
+      }
+    },
+
+    "end_f_dom": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Oh. Is that what you wanted all along?", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I mean...", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Shhh, it's okay. I'll take it from here", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm coming over now", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "All you have to do is be good and wait for me", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I'll be good", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Then I'm on my way >:)", "delay": 1800 }
+      ],
+      "ending": {
+        "id": "femdom_f",
+        "title": "Docile Boytoy",
+        "adjectives": ["Obsessive", "Delusional", "Explosive"],
+        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
+        "image": "assets/images/ending_power.png"
+      }
+    },
+
+    "end_f_femdom": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Oh. Is that what you wanted all along?", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I mean...", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Shhh, it's okay. I'll take it from here", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm coming over now", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "All you have to do is be good and wait for me", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I'll be good", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Then I'm on my way >:)", "delay": 1800 }
+      ],
+      "ending": {
+        "id": "femdom_f",
+        "title": "Docile Boytoy",
+        "adjectives": ["Obsessive", "Delusional", "Explosive"],
+        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
+        "image": "assets/images/ending_power.png"
+      }
+    },
+
+    "end_f_cutoff": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Only because I was bored!", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Are you serious?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'm blocking you", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Fine!", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Thanks for nothing, loser", "delay": 1800 }
+      ],
+      "ending": {
+        "id": "cutoff_f",
+        "title": "Cutoff",
+        "adjectives": ["Obsessive", "Delusional", "Explosive"],
+        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
+        "image": "assets/images/ending_power.png"
+      }
+    },
+
+    "end_f_harsh": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "Yeah. You are", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I don't need this in my life", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "We both got heated. Let's just chill out", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I'll text you back when I calm down, okay?", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "...", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Fine", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "But don't make me wait around forever", "delay": 1800 }
+      ],
+      "ending": {
+        "id": "harsh_f",
+        "title": "Cooldown",
+        "adjectives": ["Obsessive", "Delusional", "Explosive"],
+        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
+        "image": "assets/images/ending_power.png"
+      }
+    },
+    
+    "end_f_chaos": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "What are you talking about. ", "delay": 1200 },
+        { "sender": "player", "type": "text", "text": "Just sent screenshots to the GC", "delay": 1500 },
+        { "sender": "player", "type": "text", "text": "The guys are gonna love this", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "WHAT?!", "delay": 2500 },
+        { "sender": "ex", "type": "text", "text": "WHY WOULD YOU DO THAT???", "delay": 3000 },
+        { "sender": "ex", "type": "text", "text": "Why did you expect me not to?", "delay": 3500 },
+        { "sender": "ex", "type": "text", "text": "You're INSANE", "delay": 4000 },
+        { "sender": "ex", "type": "text", "text": "That's so messed up! I'm blocking you", "delay": 4500 },
+        { "sender": "ex", "type": "text", "text": "I hope I never see you again", "delay": 5000 }
+      ],
+      "ending": {
+        "id": "chaos_f",
+        "title": "Chaos Mode",
+        "adjectives": ["Unhinged", "Hilarious", "Legendary"],
+        "summary": "You turned her into a meme. The group chat has never been more alive. She's still texting.",
+        "image": "assets/images/ending_chaotic.png"
       }
     }
   }

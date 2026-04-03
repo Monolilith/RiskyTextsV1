@@ -31,7 +31,7 @@ export class MessageQueue {
       this.onPlaySound(msg.sender === 'ex' ? 'receive' : 'send');
 
       if (msg.sender === 'player') {
-        await this._wait(400);
+        await this._wait(msg.delay || 400);
       }
     }
 

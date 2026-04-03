@@ -16,6 +16,10 @@ export class SoundManager {
     this.sounds.splash_annoyed = new Audio('assets/sounds/splash_annoyed.wav');
     this.sounds.splash_shocked = new Audio('assets/sounds/splash_shocked.wav');
     this.sounds.splash_smug = new Audio('assets/sounds/splash_smug.wav');
+    this.sounds.splash_f_angry = this.sounds.splash_angry;
+    this.sounds.splash_f_annoyed = this.sounds.splash_annoyed;
+    this.sounds.splash_f_shocked = this.sounds.splash_shocked;
+    this.sounds.splash_f_smug = this.sounds.splash_smug;
 
     Object.values(this.sounds).forEach(audio => {
       audio.preload = 'auto';
