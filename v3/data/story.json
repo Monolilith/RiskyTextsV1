@@ -100,7 +100,7 @@
           "next": "node_proveit_01_m" },
         {
           "label": "Yeah no, blocking you", 
-          "responses": ["Yeah no, blocking you"], 
+          "responses": ["Yeah no", "Blocking you"], 
           "splash": "angry", 
           "next": "node_yeahno_m" }
       ]
@@ -393,8 +393,7 @@
     { "sender": "ex", "type": "text", "text": "How much time?", "delay": 1800 },
     { "sender": "player", "type": "text", "text": "I don't know. I need you to be patient with me", "delay": 1800 },
     { "sender": "player", "type": "text", "text": "Can you do that?", "delay": 1800 },
-    { "sender": "ex", "type": "text", "text": "Yes baby, I promise", "delay": 1800 },
-    { "sender": "player", "type": "text", "text": "", "delay": 1800 }
+    { "sender": "ex", "type": "text", "text": "Yes baby, I promise", "delay": 1800 }
   ],
   "choices": [
     { "label": "Keep that promise and maybe we'll have something", "responses": ["Keep that promise and maybe we'll have something"], "next": "end_m_patience" }
@@ -435,7 +434,7 @@
   ],
   "choices": [
     { "label": "Delete your other exes' numbers", "responses": ["Delete your other exes' numbers"], "next": "node_proveit_02_m" },
-    { "label": "Get on your knees and beg", "responses": ["Get on your knees and beg"], "next": "node_proveit_03_m" },
+    { "label": "Beg for me, like you mean it", "responses": ["Beg for me", "Like you mean it"], "next": "node_proveit_03_m" },
     { "label": "Post on Insta that I'm the best you ever had", "responses": ["Post on Insta that I'm the best you ever had"], "next": "node_proveit_04_m" }
   ]
 },
@@ -447,21 +446,19 @@
     { "sender": "ex", "type": "text", "text": "Are you happy?", "delay": 1800 }
   ],
   "choices": [
-    { "label": "Good boy 😏", "responses": ["Good boy 😏"], "next": "end_m_power" },
+    { "label": "Good boy 😏", "responses": ["Very happy", "Good boy 😏"], "next": "end_m_control" },
     { "label": "I can't believe you actually did it 🤣", "responses": ["I can't believe you actually did it 🤣"], "next": "end_m_chaos" }
   ]
 },
 
 "node_proveit_03_m": {
   "messages": [
-    { "sender": "ex", "type": "text", "text": "That's insane", "delay": 1800 },
-    { "sender": "ex", "type": "text", "text": "...", "delay": 3000 },
-    { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 1500 },
     { "sender": "ex", "type": "text", "text": "Please take me back, baby, I need you", "delay": 1800 },
-    { "sender": "ex", "type": "text", "text": "I'm nothing without you", "delay": 1800 }
+    { "sender": "ex", "type": "text", "text": "I'm nothing without you", "delay": 1800 },
+    { "sender": "ex", "type": "text", "text": "I'll treat you like a queen this time, I swear", "delay": 1800 }
   ],
   "choices": [
-    { "label": "Good boy 😏", "responses": ["Good boy 😏"], "next": "end_m_power" },
+    { "label": "Good boy 😏", "responses": ["Good boy 😏"], "next": "end_m_control" },
     { "label": "I can't believe you actually did it 🤣", "responses": ["I can't believe you actually did it 🤣"], "next": "end_m_chaos" }
   ]
 },
@@ -473,7 +470,7 @@
     { "sender": "ex", "type": "text", "text": "Are you happy?", "delay": 1800 }
   ],
   "choices": [
-    { "label": "Good boy 😏", "responses": ["Good boy 😏"], "next": "end_m_power" },
+    { "label": "Good boy 😏", "responses": ["Very happy", "Good boy 😏"], "next": "end_m_control" },
     { "label": "I can't believe you actually did it 🤣", "responses": ["I can't believe you actually did it 🤣"], "next": "end_m_chaos" }
   ]
 },
@@ -526,7 +523,7 @@
         { "sender": "ex", "type": "text", "text": "IDK it was super petty", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "You said I hit your dog or something. lol", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "...", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "I don't remember hearing about that.", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I don't remember saying that.", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "Did that happen?", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "OMG no! It's just an example", "delay": 1800 }
       ],
@@ -538,7 +535,7 @@
 
     "node_confession_02_f":{
       "messages": [
-        { "sender": "ex", "type": "text", "text": "OMG you're so literal", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Dude, you're so literal", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "I made that up, okay? Literally made it up just now", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "It didn't actually happen", "delay": 1800 }
       ],
@@ -566,10 +563,10 @@
 
     "node_confession_escape_01_f": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "It is im sorry 😭 but I'm glad you understand", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "It is, I'm sorry 😭 but I'm glad you understand", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "Bc I definitely did not do that", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "I would never hurt him", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "Okay :/", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Okay 😒", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "So you forgive me? Like in general?", "delay": 1800 }
       ],
       "choices": [
@@ -601,7 +598,7 @@
         { "sender": "ex", "type": "text", "text": "I guess", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "You guess?", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "I'm sorry I did that, okay?", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
       ],
       "choices": [
         {"label": "See, that wasn't hard", "responses": ["See, that wasn't hard"], "next": "node_confession_escape_02_f" },
@@ -611,14 +608,14 @@
 
     "node_jerk_02_f": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "Okay, maybe it wasn't a perfect dinner date", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Okay, it wasn't a perfect dinner date", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "But I wasn't just whining the entire time!", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "Every other thing you said was whining", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "I put a lot of work into that for you", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I put a lot of work into that for you", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "I guess", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "You guess?", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "I'm sorry I did that, okay?", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
       ],
       "choices": [
         {"label": "See, that wasn't hard", "responses": ["See, that wasn't hard"], "next": "node_confession_escape_02_f" },
@@ -631,11 +628,11 @@
         { "sender": "ex", "type": "text", "text": "You mean that girl you went to school with?", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "She was LITERALLY making moves on you, Mr. Oblivious", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "Even if she was, I wouldn't have cheated with her", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "That's an insane thing to assume I'd just do", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "That's an insane thing to assume I'd just do", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "I guess", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "You guess?", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "I'm sorry I did that, okay?", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "Can we PLEASE move on", "delay": 1800 }
       ],
       "choices": [
         {"label": "See, that wasn't hard", "responses": ["See, that wasn't hard"], "next": "node_confession_escape_02_f" },
@@ -696,7 +693,7 @@
 
     "node_forgive_01_f": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "Really? Thank you so much!", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "Really? Thank you baby!", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "Don't get too excited", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "I haven't forgiven you YET", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "Oh...", "delay": 1800 },
@@ -758,7 +755,7 @@
         { "sender": "ex", "type": "text", "text": "Just say you want me", "delay": 1800 }
       ],
       "choices": [
-        {"label": "I want you", "responses": ["It's a good start"], "next": "end_f_control" },
+        {"label": "I want you", "responses": ["I want you"], "next": "end_f_control" },
         {"label": "You're so desperate :rofl:", "responses": ["WOW", "I can't believe you're actually that desperate 🤣"], "next": "end_f_chaos" }
       ]
     },
@@ -877,6 +874,25 @@
       }
     },
 
+    "end_m_control": {
+      "type": "ending",
+      "messages": [
+        { "sender": "player", "type": "text", "text": "Now come over", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "You're serious?", "delay": 1500 },
+        { "sender": "player", "type": "text", "text": "Oh yes... if you promise to keep being good", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "I promise! I'll be the best boyfriend you've ever had", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "I'm on my way", "delay": 3500 },
+        { "sender": "player", "type": "text", "text": "See you soon, handsome", "delay": 4000 }
+      ],
+      "ending": {
+        "id": "power_move",
+        "title": "Power Move",
+        "adjectives": ["Calculated", "Dominant", "Assured"],
+        "summary": "He's wrapped around your finger now, and he's not letting go.",
+        "image": "assets/images/ending_toxic.png"
+      }
+    },
+
     "end_f_freshstart": {
       "type": "ending",
       "messages": [
@@ -903,7 +919,7 @@
         { "sender": "ex", "type": "text", "text": "I'm coming over now", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "All you have to do is be good and wait for me", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "I'll be good", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "Then I'm on my way 😈", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "Then I'm on my way 😈", "delay": 3000 }
       ],
       "ending": {
         "id": "femdom",
@@ -921,7 +937,7 @@
         { "sender": "player", "type": "text", "text": "Are you serious?", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "I'm blocking you", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "Fine!", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "Thanks for nothing, loser", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "Thanks for nothing, loser", "delay": 3000 }
       ],
       "ending": {
         "id": "cutoff",
@@ -940,8 +956,8 @@
         { "sender": "ex", "type": "text", "text": "We both got heated. Let's just chill out", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "I'll text you back when I calm down, okay?", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "...", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "Fine", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "But don't make me wait around forever", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "Fine", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "But don't make me wait around forever", "delay": 3000 }
       ],
       "ending": {
         "id": "cooldown",
@@ -961,7 +977,7 @@
         { "sender": "ex", "type": "text", "text": "That's so evil", "delay": 2500 },
         { "sender": "player", "type": "text", "text": "Yeah well, you deserve it", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "Don't text me again. We're done.", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "Bye!", "delay": 1800 }
+        { "sender": "player", "type": "text", "text": "Bye!", "delay": 3000 }
       ],
       "ending": {
         "id": "fakeout",
@@ -983,7 +999,7 @@
         { "sender": "ex", "type": "text", "text": "Why did you expect me not to?", "delay": 3500 },
         { "sender": "ex", "type": "text", "text": "You're INSANE", "delay": 4000 },
         { "sender": "ex", "type": "text", "text": "That's so messed up! I'm blocking you", "delay": 4500 },
-        { "sender": "ex", "type": "text", "text": "I hope I never see you again", "delay": 5000 }
+        { "sender": "ex", "type": "text", "text": "I hope I never see you again", "delay": 3000 }
       ],
       "ending": {
         "id": "chaos_mode",
@@ -991,6 +1007,26 @@
         "adjectives": ["Unhinged", "Hilarious", "Legendary"],
         "summary": "The group chat is on fire. Her ego will never recover.",
         "image": "assets/images/ending_chaos_f.png"
+      }
+    },
+
+    "end_f_control": {
+      "type": "ending",
+      "messages": [
+        { "sender": "player", "type": "text", "text": "Now come over", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "You mean it? 🥺", "delay": 1500 },
+        { "sender": "player", "type": "text", "text": "You mean what you said, right?", "delay": 2000 },
+        { "sender": "player", "type": "text", "text": "Come show me that's true", "delay": 800 },
+        { "sender": "ex", "type": "text", "text": "Of course, baby 🥰", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "I'm on my way", "delay": 3500 },
+        { "sender": "player", "type": "text", "text": "See you soon, princess", "delay": 4000 }
+      ],
+      "ending": {
+        "id": "power_move",
+        "title": "Power Move",
+        "adjectives": ["Calculated", "Dominant", "Assured"],
+        "summary": "She's wrapped around your finger now, and she's not letting go.",
+        "image": "assets/images/ending_toxic.png"
       }
     }
   }
