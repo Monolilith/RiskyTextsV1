@@ -11,9 +11,9 @@
 
     "node_start": {
       "messages": [
-        { "sender": "ex", "type": "text", "text": "Remember how good we used to have it?", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "Remember how good we used to have it?", "delay": 0 },
         { "sender": "ex", "type": "text", "text": "It's not too late to try again... ", "delay": 1800 },
-        { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 2000 }
+        { "sender": "ex", "type": "image", "src": "assets/images/photo_01.png", "delay": 2000 }
       ],
       "choices": [
         {
@@ -662,7 +662,7 @@
       ],
       "choices": [
         {"label": "For you to actually care about this", "responses": ["For you to actually care about this"], "next": "node_effort_01_f" },
-        {"label": "You know what? I'm done.", "responses": ["You know what? I'm done."], "splash": "angry", "next": "node_accusations_01_f" }
+        {"label": "You know what? I'm done.", "responses": ["You know what? I'm done."], "splash": "f_angry", "next": "node_accusations_01_f" }
       ]
     },
 
@@ -770,16 +770,17 @@
     "end_m_freshstart": {
       "type": "ending",
       "messages": [
-        { "sender": "ex", "type": "text", "text": "On my way 🏃", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "Don't change your mind this time", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "I love you", "delay": 2500 }
+        { "sender": "player", "type": "text", "text": "You wanna come over now, too?", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "I'm already on my way 🏃‍♂️", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I can't wait to see you again, baby", "delay": 2500 },
+        { "sender": "player", "type": "text", "text": "Just make it count", "delay": 1200 }
       ],
       "ending": {
-        "id": "fresh_start_m",
-        "title": "Toxic Loop",
-        "adjectives": ["Obsessive", "Delusional", "Explosive"],
-        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
-        "image": "assets/images/ending_toxic.png"
+        "id": "fresh_start",
+        "title": "Fresh Start",
+        "adjectives": ["Obsessive", "Delusional", "Cyclical"],
+        "summary": "Let's face it: this going to be a disaster.",
+        "image": "assets/images/ending_freshstart.png"
       }
     },
 
@@ -795,11 +796,11 @@
         { "sender": "ex", "type": "text", "text": "But don't make me wait around forever", "delay": 1800 }
       ],
       "ending": {
-        "id": "simmering_m",
+        "id": "cooldown",
         "title": "Cooldown",
-        "adjectives": ["Ruthless", "Detached", "Free"],
-        "summary": "You blocked him for good. He never texted again. You feel... nothing.",
-        "image": "assets/images/ending_chaotic.png"
+        "adjectives": ["Distant", "Reluctant", "Dragged Out"],
+        "summary": "Are you stringing him along on purpose, or just scared to let go?",
+        "image": "assets/images/ending_cold_m.png"
       }
     },
 
@@ -816,7 +817,7 @@
       "title": "Cutoff",
         "adjectives": ["Ruthless", "Detached", "Free"],
         "summary": "You blocked him for good. He never texted again. You feel... nothing.",
-        "image": "assets/images/ending_chaotic.png"
+        "image": "assets/images/ending_cold_m.png"
       }
     },
 
@@ -829,14 +830,14 @@
         { "sender": "ex", "type": "text", "text": "You're actually evil", "delay": 2500 },
         { "sender": "player", "type": "text", "text": "Yeah well, you deserve it", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "If you ever text me again I'll do the same thing, so...", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "Bye <3", "delay": 1800 }
+        { "sender": "player", "type": "text", "text": "Bye ❤️", "delay": 1800 }
       ],
       "ending": {
-        "id": "fakeout_m",
-        "title": "Fakeout",
-        "adjectives": ["Ruthless", "Detached", "Free"],
-        "summary": "You blocked him for good. He never texted again. You feel... nothing.",
-        "image": "assets/images/ending_chaotic.png"
+        "id": "fakeout",
+        "title": "Fake-out",
+        "adjectives": ["Savage", "Mischievous", "Powerful"],
+        "summary": "You turned the tables and made a fool of him. He won't bother you again.",
+        "image": "assets/images/ending_chaos_m.png"
       }
     },
 
@@ -846,27 +847,11 @@
         { "sender": "ex", "type": "text", "text": "...", "delay": 1200 }
       ],
       "ending": {
-        "id": "blocked_m",
+        "id": "blocked",
         "title": "Blocked",
         "adjectives": ["Ruthless", "Detached", "Free"],
         "summary": "You blocked him for good. He never texted again. You feel... nothing.",
-        "image": "assets/images/ending_chaotic.png"
-      }
-    },
-
-    "end_m_power": {
-      "type": "ending",
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "I'm yours", "delay": 1500 },
-        { "sender": "ex", "type": "text", "text": "I've always been yours", "delay": 2000 },
-        { "sender": "ex", "type": "image", "src": "assets/images/ex_photo_01.png", "delay": 2500 }
-      ],
-      "ending": {
-        "id": "power_move_m",
-        "title": "Power Move",
-        "adjectives": ["Dominant", "Savage", "Iconic"],
-        "summary": "You turned the tables. He's wrapped around your finger now. The ex becomes the simp.",
-        "image": "assets/images/ending_power.png"
+        "image": "assets/images/ending_cold_m.png"
       }
     },
 
@@ -884,47 +869,28 @@
         { "sender": "ex", "type": "text", "text": "I hope I never see you again", "delay": 2000 }
       ],
       "ending": {
-        "id": "power_move_m",
-        "title": "Power Move",
-        "adjectives": ["Dominant", "Savage", "Iconic"],
-        "summary": "You turned the tables. He's wrapped around your finger now. The ex becomes the simp.",
-        "image": "assets/images/ending_power.png"
+        "id": "chaos_mode",
+        "title": "Chaos Mode",
+        "adjectives": ["Unhinged", "Hilarious", "Legendary"],
+        "summary": "The group chat is on fire. His ego will never recover.",
+        "image": "assets/images/ending_chaos_m.png"
       }
     },
 
     "end_f_freshstart": {
       "type": "ending",
       "messages": [
-        { "sender": "ex", "type": "text", "text": "On my way 🏃", "delay": 1200 },
-        { "sender": "ex", "type": "text", "text": "Don't change your mind this time", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "I love you", "delay": 2500 }
+        { "sender": "player", "type": "text", "text": "You wanna come over now, too?", "delay": 1200 },
+        { "sender": "ex", "type": "text", "text": "I'm already on my way 🏃‍♀️", "delay": 1800 },
+        { "sender": "ex", "type": "text", "text": "I can't wait to see you again, baby", "delay": 2500 },
+        { "sender": "player", "type": "text", "text": "Just make it count", "delay": 1200 }
       ],
       "ending": {
-        "id": "fresh_start_m",
-        "title": "Toxic Loop",
-        "adjectives": ["Obsessive", "Delusional", "Explosive"],
-        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
-        "image": "assets/images/ending_toxic.png"
-      }
-    },
-
-    "end_f_dom": {
-      "type": "ending",
-      "messages": [
-        { "sender": "ex", "type": "text", "text": "Oh. Is that what you wanted all along?", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "I mean...", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "Shhh, it's okay. I'll take it from here", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "I'm coming over now", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "All you have to do is be good and wait for me", "delay": 1800 },
-        { "sender": "player", "type": "text", "text": "I'll be good", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "Then I'm on my way >:)", "delay": 1800 }
-      ],
-      "ending": {
-        "id": "femdom_f",
-        "title": "Docile Boytoy",
-        "adjectives": ["Obsessive", "Delusional", "Explosive"],
-        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
-        "image": "assets/images/ending_power.png"
+        "id": "fresh_start",
+        "title": "Fresh Start",
+        "adjectives": ["Obsessive", "Delusional", "Cyclical"],
+        "summary": "Let's face it: this going to be a disaster.",
+        "image": "assets/images/ending_freshstart.png"
       }
     },
 
@@ -937,13 +903,13 @@
         { "sender": "ex", "type": "text", "text": "I'm coming over now", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "All you have to do is be good and wait for me", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "I'll be good", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "Then I'm on my way >:)", "delay": 1800 }
+        { "sender": "ex", "type": "text", "text": "Then I'm on my way 😈", "delay": 1800 }
       ],
       "ending": {
-        "id": "femdom_f",
-        "title": "Docile Boytoy",
-        "adjectives": ["Obsessive", "Delusional", "Explosive"],
-        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
+        "id": "femdom",
+        "title": "Boytoy",
+        "adjectives": ["Submissive", "Obedient", "Passionate"],
+        "summary": "Things are so much simpler with her in control.",
         "image": "assets/images/ending_power.png"
       }
     },
@@ -953,16 +919,16 @@
       "messages": [
         { "sender": "ex", "type": "text", "text": "Only because I was bored!", "delay": 1800 },
         { "sender": "player", "type": "text", "text": "Are you serious?", "delay": 1800 },
-        { "sender": "ex", "type": "text", "text": "I'm blocking you", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "I'm blocking you", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "Fine!", "delay": 1800 },
         { "sender": "ex", "type": "text", "text": "Thanks for nothing, loser", "delay": 1800 }
       ],
       "ending": {
-        "id": "cutoff_f",
+        "id": "cutoff",
         "title": "Cutoff",
-        "adjectives": ["Obsessive", "Delusional", "Explosive"],
-        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
-        "image": "assets/images/ending_power.png"
+        "adjectives": ["Explosive", "Transactional", "Final"],
+        "summary": "It's for the best that this ends before anyone gets MORE hurt.",
+        "image": "assets/images/ending_cold_f.png"
       }
     },
 
@@ -978,11 +944,31 @@
         { "sender": "ex", "type": "text", "text": "But don't make me wait around forever", "delay": 1800 }
       ],
       "ending": {
-        "id": "harsh_f",
+        "id": "cooldown",
         "title": "Cooldown",
-        "adjectives": ["Obsessive", "Delusional", "Explosive"],
-        "summary": "You unblock him. He shows up. You argue. You kiss. Repeat forever.",
-        "image": "assets/images/ending_power.png"
+        "adjectives": ["Distant", "Reluctant", "Dragged Out"],
+        "summary": "Are you stringing her along on purpose, or just scared to let go?",
+        "image": "assets/images/ending_cold_f.png"
+      }
+    },
+
+    "end_f_fakeout": {
+      "type": "ending",
+      "messages": [
+        { "sender": "ex", "type": "text", "text": "What????", "delay": 1200 },
+        { "sender": "player", "type": "text", "text": "I can't believe how easy it was to get ur hopes up", "delay": 1500 },
+        { "sender": "ex", "type": "text", "text": "You can't be serious rn", "delay": 2000 },
+        { "sender": "ex", "type": "text", "text": "That's so evil", "delay": 2500 },
+        { "sender": "player", "type": "text", "text": "Yeah well, you deserve it", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Don't text me again. We're done.", "delay": 1800 },
+        { "sender": "player", "type": "text", "text": "Bye!", "delay": 1800 }
+      ],
+      "ending": {
+        "id": "fakeout",
+        "title": "Fake-out",
+        "adjectives": ["Savage", "Mischievous", "Powerful"],
+        "summary": "You turned the tables and made a fool of her. She won't bother you again.",
+        "image": "assets/images/ending_chaos_f.png"
       }
     },
     
@@ -1000,11 +986,11 @@
         { "sender": "ex", "type": "text", "text": "I hope I never see you again", "delay": 5000 }
       ],
       "ending": {
-        "id": "chaos_f",
+        "id": "chaos_mode",
         "title": "Chaos Mode",
         "adjectives": ["Unhinged", "Hilarious", "Legendary"],
-        "summary": "You turned her into a meme. The group chat has never been more alive. She's still texting.",
-        "image": "assets/images/ending_chaotic.png"
+        "summary": "The group chat is on fire. Her ego will never recover.",
+        "image": "assets/images/ending_chaos_f.png"
       }
     }
   }
